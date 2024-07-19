@@ -13,12 +13,34 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+
+    <style>
+      body {
+        background-image: url("{% static 'ccbackground.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-y;
+        height: 100vh;
+      }
+    </style>
+    
   </head>
 
   <body>
     <div class="container">
       <div class="row justify-content-center mt-5 mb-5">
         <div class="col-md-6">
+              {% if knn_result %}
+                <div class="alert alert-info mt-3">
+                  {{ knn_result }}
+                </div>
+              {% endif %}
+
+              {% if dectree_result %}
+                <div class="alert alert-info mt-3">
+                  {{ dectree_result }}
+                </div>
+              {% endif %}
           <div class="card">
             <div class="card-header">
               <h4 class="card-title">Personal Details</h4>
@@ -231,7 +253,7 @@
                 </div>
               </form>
             </div>
-              {% if knn_result %}
+              <!-- {% if knn_result %}
                 <div class="alert alert-info mt-3">
                   {{ knn_result }}
                 </div>
@@ -241,7 +263,7 @@
                 <div class="alert alert-info mt-3">
                   {{ dectree_result }}
                 </div>
-              {% endif %}
+              {% endif %} -->
           </div>
         </div>
       </div>
