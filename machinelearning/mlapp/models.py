@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Applicant(models.Model):
@@ -8,25 +9,20 @@ class Applicant(models.Model):
         ('1', 'Female'),
     ]
 
-    YES_NO_CHOICES = [
-        (True, 'Yes'),
-        (False, 'No')
-    ]
-
     age = models.PositiveIntegerField()
     gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
-    car = models.BooleanField(choices=YES_NO_CHOICES)
-    property = models.BooleanField(choices=YES_NO_CHOICES)
-    workPhone = models.BooleanField(choices=YES_NO_CHOICES)
-    ownPhone = models.BooleanField(choices=YES_NO_CHOICES)
-    email = models.BooleanField(choices=YES_NO_CHOICES)
-    employment = models.BooleanField(choices=YES_NO_CHOICES)
+    car = models.BooleanField(default=False)
+    property = models.BooleanField(default=False)
+    workPhone = models.BooleanField(default=False)
+    ownPhone = models.BooleanField(default=False)
+    email = models.BooleanField(default=False)
+    employment = models.BooleanField(default=False)
     children = models.PositiveIntegerField()
     family = models.PositiveIntegerField()
     duration = models.PositiveIntegerField()
     income = models.FloatField()
     employmentYears = models.PositiveIntegerField()
-    created_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(default=timezone.now)
     objects = models.Manager()
 
     def __str__(self):

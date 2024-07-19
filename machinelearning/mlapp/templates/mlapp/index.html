@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,30 +18,28 @@
   <body>
     <div class="container">
       <div class="row justify-content-center mt-5 mb-5">
-        <div class="col-md-7">
+        <div class="col-md-6">
           <div class="card">
             <div class="card-header">
               <h4 class="card-title">Personal Details</h4>
             </div>
             <div class="card-body">
-              <form method="post">
-                <!--{% csrf_token %} -->
+              <form method="post">{% csrf_token %}
                 <div class="card">
                   <div class="card-body">
                     <div class="row mb-3">
                         <h5 class="card-subtitle mb-2">Age</h5>
-                        <input type="number" class="form-control" id="age" name="age" step="1" min="0">
+                        <input type="number" class="form-control" id="fAge" name="fAge" step="1" min="0">
                     </div>
                     <h5 class="card-subtitle mb-2">Gender</h5>
                     <div class="form-check">
-                      <label for="female" class="form-check-label"
-                        >Female</label
-                      >
+                      <label for="female" class="form-check-label">Female</label>
                       <input
                         type="radio"
                         class="form-check-input"
                         id="female"
-                        name="female"
+                        name="fGender"
+                        value="1"
                       />
                     </div>
                     <div class="form-check">
@@ -48,7 +48,8 @@
                         type="radio"
                         class="form-check-input"
                         id="male"
-                        name="male"
+                        name="fGender"
+                        value="0"
                       />
                     </div>
                   </div>
@@ -56,18 +57,18 @@
                 <br />
                 <div class="card">
                   <div class="card-body">
-                    <h6 class="card-subtitle mb-2">
-                      Select yes if you have the following. If otherwise, select
-                      No.
-                    </h6>
-                    <h5 class="card-subtitle mb-2">Car</h5>
+                    <h6><i>
+                      Select yes if you have the following. If otherwise, select No.
+                    </i></h6>
+                    <h5 class="card-subtitle mb-7 mt-2">Car</h5>
                     <div class="form-check">
                       <label for="ownCar" class="form-check-label">Yes</label>
                       <input
                         type="radio"
                         class="form-check-input"
                         id="ownCar"
-                        name="ownCar"
+                        name="fCar"
+                        value="1"
                       />
                     </div>
                     <div class="form-check">
@@ -76,79 +77,74 @@
                         type="radio"
                         class="form-check-input"
                         id="xownCar"
-                        name="xownCar"
+                        name="fCar"
+                        value="0"
                       />
                     </div>
                     <br />
                     <h5 class="card-subtitle mb-2">Property</h5>
                     <div class="form-check">
-                      <label for="ownProperty" class="form-check-label"
-                        >Yes</label
-                      >
+                      <label for="ownProperty" class="form-check-label">Yes</label>
                       <input
                         type="radio"
                         class="form-check-input"
                         id="ownProperty"
-                        name="ownProperty"
+                        name="fProperty"
+                        value="1"
                       />
                     </div>
                     <div class="form-check">
-                      <label for="xownProperty" class="form-check-label"
-                        >No</label
-                      >
+                      <label for="xownProperty" class="form-check-label">No</label>
                       <input
                         type="radio"
                         class="form-check-input"
                         id="xownProperty"
-                        name="xownProperty"
+                        name="fProperty"
+                        value="0"
                       />
                     </div>
                     <br />
                     <h5 class="card-subtitle mb-2">Work Phone</h5>
                     <div class="form-check">
-                      <label for="ownWorkPhone" class="form-check-label"
-                        >Yes</label
-                      >
+                      <label for="ownWorkPhone" class="form-check-label">Yes</label>
                       <input
                         type="radio"
                         class="form-check-input"
                         id="ownWorkPhone"
-                        name="ownWorkPhone"
+                        name="fWorkPhone"
+                        value="1"
                       />
                     </div>
                     <div class="form-check">
-                      <label for="xownWorkPhone" class="form-check-label"
-                        >No</label
-                      >
+                      <label for="xownWorkPhone" class="form-check-label">No</label>
                       <input
                         type="radio"
                         class="form-check-input"
                         id="xownWorkPhone"
-                        name="xownWorkPhone"
+                        name="fWorkPhone"
+                        value="0"
                       />
                     </div>
                     <br />
                     <h5 class="card-subtitle mb-2">Personal Phone</h5>
                     <div class="form-check">
-                      <label for="ownPersonalPhone" class="form-check-label"
-                        >Yes</label
-                      >
+                      <label for="ownPersonalPhone" class="form-check-label">Yes</label>
                       <input
                         type="radio"
                         class="form-check-input"
                         id="ownPersonalPhone"
-                        name="ownPersonalPhone"
+                        name="fPersonalPhone"
+                        value="1"
                       />
                     </div>
                     <div class="form-check">
-                      <label for="xownPersonalPhone" class="form-check-label"
-                        >No</label
-                      >
+                      <label for="xownPersonalPhone" class="form-check-label">No</label>
                       <input
                         type="radio"
                         class="form-check-input"
                         id="xownPersonalPhone"
-                        name="xownPersonalPhone"
+                        name="fPersonalPhone"
+                        value="0"
                       />
                     </div>
                     <br />
@@ -159,7 +155,8 @@
                         type="radio"
                         class="form-check-input"
                         id="ownEmail"
-                        name="ownEmail"
+                        name="fEmail"
+                        value="1"
                       />
                     </div>
                     <div class="form-check">
@@ -168,7 +165,8 @@
                         type="radio"
                         class="form-check-input"
                         id="xownEmail"
-                        name="xownEmail"
+                        name="fEmail"
+                        value="0"
                       />
                     </div>
                     </div>
@@ -181,58 +179,69 @@
                       </h6>
                       <h5 class="card-subtitle mb-2">Are you employed?</h5>
                       <div class="form-check">
-                        <label for="employed" class="form-check-label"
-                          >Yes</label
-                        >
+                        <label for="employed" class="form-check-label">Yes</label>
                         <input
                           type="radio"
                           class="form-check-input"
                           id="employed"
-                          name="employed"
+                          name="fEmployed"
+                          value="1"
                         />
                       </div>
                       <div class="form-check">
-                        <label for="xemployed" class="form-check-label"
-                          >No</label
-                        >
+                        <label for="xemployed" class="form-check-label">No</label>
                         <input
                           type="radio"
                           class="form-check-input"
                           id="xemployed"
-                          name="xemployed"
+                          name="fEmployed"
+                          value="0"
                         />
                       </div>
                       <br>
                         <div class="row mb-3">
-                            <label for="children" class="form-label"><b>Number of Children:</b></label>
-                            <input type="number" class="form-control" id="children" name="children" step="1" min="0">
+                            <h6 class="card-subtitle mb-2">Number of Children:</h6>
+                            <input type="number" class="form-control" id="fChildren" name="fChildren" step="1" min="0">
                         </div>
                         <br>
                         <div class="row mb-3">
-                            <label for="family" class="form-label"><b>Total Number of Family Members:</b></label>
-                            <input type="number" class="form-control" id="family" name="family" step="1" min="0">
+                            <h6 class="card-subtitle mb-2">Total Number of Family Members:</h6>
+                            <input type="number" class="form-control" id="fFamily" name="fFamily" step="1" min="0">
                         </div>
                         <br>
                         <div class="row mb-3">
-                            <label for="months" class="form-label"><b>Duration of your Bank Account (Months)</b></label>
-                            <input type="months" class="form-control" id="months" name="months" step="1" min="0">
+                            <h6 class="card-subtitle mb-2">How long have you had your Bank Account? (Years)</h6>
+                            <input type="number" class="form-control" id="fDuration" name="fDuration" step="1" min="0">
                         </div>
                         <br>
                         <div class="row mb-3">
-                            <label for="income" class="form-label"><b>Total Income:</b></label>
-                            <input type="float" class="form-control" id="income" name="income" min="0">
+                            <h6 class="card-subtitle mb-2">Total Income:</h6>
+                            <input type="number" class="form-control" id="fIncome" name="fIncome" min="0">
                         </div>
                         <br>
                         <div class="row mb-3">
-                            <label for="yrsEmployed" class="form-label"><b>Years Employed:</b></label>
+                            <h6 class="card-subtitle mb-2">Years Employed:</h6>
                             <input type="number" class="form-control" id="yrsEmployed" name="yrsEmployed" min="0">
                         </div>
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary mb-5">Submit</button>
+                </div>
               </form>
             </div>
+              {% if knn_result %}
+                <div class="alert alert-info mt-3">
+                  {{ knn_result }}
+                </div>
+              {% endif %}
+
+              {% if dectree_result %}
+                <div class="alert alert-info mt-3">
+                  {{ dectree_result }}
+                </div>
+              {% endif %}
           </div>
         </div>
       </div>
